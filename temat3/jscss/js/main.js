@@ -9,7 +9,7 @@ $(function () {
 
         $cubes.removeClass('is-active');
 
-        $('.experiment').each(function () {
+        $playground.each(function () {
             $(this).find('.cube').eq(times % 3).addClass('is-active');
         });
 
@@ -27,9 +27,9 @@ $(function () {
     }
 
     function multiplyElements() {
-        console.log($playground.clone());
-        $body.append($playground.clone());
+        $body.append($playground.first().clone());
         $cubes = $('.cube');
+        $playground = $('.experiment');
     }
 
 
