@@ -4,7 +4,7 @@ require.config({
         bootstrapAffix: '../bower_components/sass-bootstrap/js/bootstrap-affix.js',
         bootstrapAlert: '../bower_components/sass-bootstrap/js/bootstrap-alert.js',
         bootstrapButton: '../bower_components/sass-bootstrap/js/bootstrap-button.js',
-        bootstrapCarousel: '../bower_components/sass-bootstrap/js/bootstrap-carousel.js',
+        bootstrapCarousel: '../bower_components/sass-bootstrap/js/bootstrap-carousel',
         bootstrapCollapse: '../bower_components/sass-bootstrap/js/bootstrap-collapse.js',
         bootstrapPopover: '../bower_components/sass-bootstrap/js/bootstrap-popover.js',
         bootstrapScrollspy: '../bower_components/sass-bootstrap/js/bootstrap-scrollspy.js',
@@ -50,9 +50,9 @@ require.config({
     }
 });
 
-require(['app', 'jquery'], function (app, $) {
+require(['app', 'jquery'], function (App, $) {
     'use strict';
-    // use app here
-    console.log(app);
-    console.log('Running jQuery %s', $().jquery);
+
+    new App();
+
 });

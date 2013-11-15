@@ -1,6 +1,11 @@
 /*global define */
-define([], function () {
+define(['jquery', 'bootstrapCarousel'], function ($) {
     'use strict';
 
-    return '\'Allo \'Allo!';
+    return function(){
+    	console.log('asdasdsda');
+    	$('.carousel').carousel();
+    }
+
+    //$('.carousel').carousel()
 });
