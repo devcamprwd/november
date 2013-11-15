@@ -21,18 +21,25 @@
 <body>
 	<div class="status">translate3d on</div>
 	<?php 
-		for( $i = 1; $i <= 300; $i++ ) {
+		for( $i = 1; $i <= 250; $i++ ) {
 			echo '<div class="box"><img src="images/face.jpg" width="100" height="100" alt=""></div>';
 		}
 	?>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>
-		setTimeout(function() {
+		// window.onload = function() {
 
-    		// $('.box').removeClass('box');
-    		$('.status').text('translate3d off').addClass('off');
+		// 	setTimeout(function() {
 
-    	}, 2000);
+  //   			$('.box').removeClass('box');
+  //   			$('.status').text('translate3d off').addClass('off');
+
+  //   		}, 5000);
+
+		// }
+
+			
+		
 	</script>
 </body>
 </html>
