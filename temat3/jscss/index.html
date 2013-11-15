@@ -23,8 +23,6 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<button id="toggle-animation">Toggle animation</button>
-<button id="multiply-elements">Multiply elements</button>
 <div class="experiment">
     <div class="cube">
         <div class="topFace">
@@ -102,7 +100,20 @@
         </div>
     </div>
 </div>
+<div class="buttons">
+    <button id="toggle-animation">Toggle animation</button>
+    <button id="multiply-elements">Multiply elements</button>
+    <button id="perform-test">Perform test</button>
+    <button id="toggle-chart">Chart</button>
+</div>
+<div class="rate">
+    <div>rows: <span id="rows">1</span></div>
+    <div>fps: <span id="fps">0</span></div>
+    <canvas class="is-hidden" id="myChart" width="1600" height="300"></canvas>
+</div>
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="js/vendor/lodash.min.js"></script>
+<script src="js/vendor/Chart.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

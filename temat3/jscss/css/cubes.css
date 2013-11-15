@@ -49,15 +49,15 @@ Author: Paul Hayes
     position: absolute;
 }
 
-.cube:hover .rightFace,
-.cube:hover .leftFace,
-.cube:hover .topFace div {
+.cube.is-active .rightFace,
+.cube.is-active .leftFace,
+.cube.is-active .topFace div {
     background-color: #ffc;
 }
 
-.cube:hover .rightFace:hover,
-.cube:hover .leftFace:hover,
-.cube:hover .topFace:hover div {
+.cube.is-active .rightFace.is-active,
+.cube.is-active .leftFace.is-active,
+.cube.is-active .topFace.is-active div {
     background-color: #ffa;
 }
 
