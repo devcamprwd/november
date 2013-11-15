@@ -1,0 +1,21 @@
+.mainmenu {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 26px;
+  margin: 12px 0 28px 0;
+}
+
+.mainmenu-list {
+  list-style: none;
+  text-align: center;
+}
+
+.mainmenu-element {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.mainmenu-link, .mainmenu-link:hover {
+  color: #000000;
+  text-decoration: none;
+}
