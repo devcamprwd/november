@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Picturefill</title>
+	<script src="js/picturefill.js"></script>
+	<style>
+		img {
+			max-width: 100%;
+		}
+	</style>
+</head>
+<body>
+
+		<span data-picture>
+			<span data-src="img/small.jpg"></span>
+			<span data-src="img/medium.jpg" data-media="(min-width: 400px)"></span>
+			<span data-src="img/large.jpg" data-media="(min-width: 800px)"></span>
+			<span data-src="img/extralarge.jpg" data-media="(min-width: 1000px)"></span>
+
+			<noscript><img src="img/small.jpg"></noscript>
+		</span>
+</body>
+</html>
