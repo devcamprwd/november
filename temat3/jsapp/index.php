@@ -21,7 +21,7 @@
 <body>
 	<div class="status">translate3d on</div>
 	<?php 
-		for( $i = 1; $i <= 600; $i++ ) {
+		for( $i = 1; $i <= 300; $i++ ) {
 			echo '<div class="box"><img src="images/face.jpg" width="100" height="100" alt=""></div>';
 		}
 	?>
@@ -29,7 +29,7 @@
 	<script>
 		setTimeout(function() {
 
-    		$('body').find('.box').removeClass('box');
+    		// $('.box').removeClass('box');
     		$('.status').text('translate3d off').addClass('off');
 
     	}, 2000);
