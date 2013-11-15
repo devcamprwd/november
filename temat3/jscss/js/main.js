@@ -50,9 +50,9 @@ $(function () {
         labels: [],
         datasets: [
             {
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
+                fillColor: "rgba(0,0,255,0.5)",
+                strokeColor: "rgba(0,255,0,1)",
+                pointColor: "rgba(0,255,0,1)",
                 pointStrokeColor: "#fff",
                 data: []
             }
