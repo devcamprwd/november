@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            background-color: black;
+            background-image: url(imgs/demo2.png);
+            background-position: 0 0;
+            background-repeat: repeat;
+            -webkit-animation: move-stars 500s linear;
+            animation: move-stars 500s linear;
+            background-attachment: fixed;
+
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 40px;
+            line-height: 1;
+        }
+        .timelines {
+            display: block;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            margin-top: 500px;
+        }
+        .timeline {
+            max-width: 100%;
+        }
+        @keyframes move-stars {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -2000px 0;
+            }
+        }
+
+        @-webkit-keyframes move-stars {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -2000px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    background-position
+    <ul class="timelines">
+        <li>Chrome <img src="imgs/demo2-2-chrome.png" class="timeline"></li>
+        <li>Safari <img src="imgs/demo2-2-safari.png" class="timeline"></li>
+    </ul>
+</body>
+</html>
