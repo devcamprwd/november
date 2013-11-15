@@ -56,17 +56,6 @@
     <div class="row">
         <div class="col-lg-12">
             <section class="slider">
-                <article class="slider-slide">
-                    <img class="slider-image" src="images/mainphoto.jpg">
-
-                    <div class="slider-caption">
-                        <header class="slider-caption-title"><a href="#">Piękna Grażyna</a></header>
-
-                        <div class="slider-caption-subtitle"><a href="#">Rockowy makijaż i zajebiste zdjęcia</a></div>
-                        <a href="#" class="slider-caption-readmore">Zobacz całość</a>
-                    </div>
-
-                </article>
                 <nav class="slider-navi">
                     <ul class="slider-navi-list">
                         <li class="slider-navi-item is-active">
@@ -83,14 +72,44 @@
                         </li>
                     </ul>
                 </nav>
+                <style>
+                    #mainphoto {
+                        background-image: url(images/mainphoto.png);
+                    }
+
+                    @media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 192dpi) {
+                        #mainphoto {
+                            background-image: url(images/mainphoto-retina.png);
+                        }
+                    }
+                </style>
+                <article id="mainphoto" class="slider-slide">
+                    <div class="slider-caption">
+                        <header class="slider-caption-title"><a href="#">Piękna Grażyna</a></header>
+
+                        <div class="slider-caption-subtitle"><a href="#">Rockowy makijaż i zajebiste zdjęcia</a></div>
+                        <a href="#" class="slider-caption-readmore">Zobacz całość</a>
+                    </div>
+
+                </article>
+
             </section>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <section class="story story-left">
-                <img class="story-image" src="images/photo1.jpg"/>
+            <style>
+                #photo1 {
+                    background-image: url(images/photo1.png);
+                }
 
+                @media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 192dpi) {
+                    #photo1 {
+                        background-image: url(images/photo1-retina.png);
+                    }
+                }
+            </style>
+            <section id="photo1" class="story story-left">
                 <div class="story-caption">
                     <header class="story-caption-title"><a href="#">Piękna Weronika</a></header>
 
@@ -103,8 +122,18 @@
             </section>
         </div>
         <div class="col-lg-6">
-            <section class="story story-right">
-                <img class="story-image" src="images/photo2.jpg"/>
+            <style>
+                #photo2 {
+                    background-image: url(images/photo2.png);
+                }
+
+                @media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 192dpi) {
+                    #photo2 {
+                        background-image: url(images/photo2-retina.png);
+                    }
+                }
+            </style>
+            <section id="photo2" class="story story-right">
 
                 <div class="story-caption">
                     <header class="story-caption-title"><a href="#">Piękna Kamila</a></header>

@@ -1,56 +1,51 @@
 .slider {
   background: #39332B;
-  height: 500px;
 }
 
 .slider-slide {
   overflow: hidden;
-}
-
-.slider-image {
-  top: 0;
-  left: 0;
-  position: absolute;
-  max-width: 100%;
-  min-height: 100%;
-  opacity: 0.4;
-  overflow: hidden;
+  background-position: center;
+  background-size: auto 100%;
+  min-height: 500px;
 }
 
 .slider-caption {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
 }
 
-.slider-caption-title,
-.slider-caption-title > a {
+.slider-caption-title {
   font-size: 72px;
   font-family: Lato;
   font-weight: 100;
   margin-top: 100px;
+  letter-spacing: 3px;
+}
+
+.slider-caption-title,
+.slider-caption-title > a {
   color: #fff;
   text-decoration: none;
-  letter-spacing: 3px;
+}
+
+.slider-caption-subtitle {
+  font-size: 22px;
+  margin-top: 38px;
+  letter-spacing: 2px;
 }
 
 .slider-caption-subtitle,
 .slider-caption-subtitle > a {
-  font-size: 22px;
-  margin-top: 38px;
   color: #fff;
   text-decoration: none;
-  letter-spacing: 2px;
 }
 
 .slider-caption-readmore {
   display: block;
   width: 76px;
   height: 86px;
-  margin: auto;
+  margin: 30px auto;
   border: 4px solid #B98751;
   background: url(../images/readmore-icon.png) center center no-repeat rgba(185, 135, 81, 0);
   overflow: hidden;
@@ -65,8 +60,14 @@
 
 .slider-navi {
   position: absolute;
-  top: 50%;
+  top: 30px;
   right: 30px;
+  opacity: 0.6;
+  transition: opacity .2s;
+}
+
+.slider-navi:hover {
+  opacity: 1;
 }
 
 .slider-navi-list {
@@ -74,13 +75,13 @@
 }
 
 .slider-navi-item {
-  display: block;
+  display: inline-block;
   overflow: hidden;
   line-height: 99999px;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background: #000;
-  margin-top: 10px;
+  margin-left: 25px;
 }
 
 .slider-navi-item > a {
@@ -95,4 +96,10 @@
 
 .slider-navi-item.is-active {
   background: #B98751;
+}
+
+@media (max-width: 350px) {
+  .slider-caption-title {
+    font-size: 50px;
+  }
 }

@@ -1,43 +1,28 @@
 .story {
-  height: 300px;
+  min-height: 300px;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 .story-right {
-  background: #4B4239;
+  background-color: #4B4239;
+  padding-left: 30px;
 }
 
 .story-left {
-  background: #594F43;
+  background-color: #594F43;
   text-align: right;
-}
-
-.story-image {
-  top: 0;
-  left: 0;
-  position: absolute;
-  max-width: 100%;
-  min-height: 100%;
-  opacity: 0.4;
-  overflow: hidden;
+  padding-right: 30px;
 }
 
 .story-caption {
-  position: absolute;
-  width: 70%;
   height: 100%;
   color: #fff;
 }
 
-.story-right .story-caption {
-  left: 15%;
-}
-
-.story-left .story-caption {
-  right: 15%;
-}
-
 .story-caption-title {
-  margin: 80px 0 30px 0;
+  padding: 80px 0 30px 0;
   font-size: 28px;
   font-family: Lato;
   text-transform: uppercase;
@@ -57,10 +42,18 @@
 .story-caption-readmore {
   text-transform: uppercase;
   font-weight: bold;
+  padding-bottom: 30px;
+  display: block;
 }
 
 .story-caption-readmore,
 .story-caption-readmore:hover {
   color: #fff;
   text-decoration: none;
+}
+
+@media (max-width: 350px) {
+  .story-caption-title {
+    padding-top: 40px;
+  }
 }
