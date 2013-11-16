@@ -5,6 +5,8 @@
 
 @import "normalize";
 @import "susy";
+@import "compass/css3";
+@import "compass/css3/user-interface";
 
 [data-picture="lazy"], [data-picture="shown"] {
 	display: block;
@@ -20,6 +22,9 @@ $column-width: 4em;
 $gutter-width: 1em;
 $grid-padding: $gutter-width;
 
+img {
+    max-width: 100%;
+}
 
 .page {
     @include container;

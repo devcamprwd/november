@@ -1,7 +1,7 @@
 var static = require('node-static'),
     http = require('http');
 
-var webroot = process.argv[2] || '.',
+var webroot = process.argv[2] || 'app',
     port = 8080;
 
 var file = new(static.Server)(webroot);

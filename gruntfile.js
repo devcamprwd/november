@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-responsive-images');
-    
+
     stylOptions = {
         'compress': false,
         'linenos': false, // set to 'true' with quotes to turn line numbers on
@@ -24,17 +24,18 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         meta: {
             name: 'Project Name',
-            banner: '/*! <%= meta.name %> - v<%= pkg.version %> - <%= template.today("m/d/yyyy") %> */'
+            banner: '/*! <%= meta.name %> - v<%= pkg.version %> - <%= template.today("m/d/yyyy") %> */',
+            app: 'app'
         },
 
-        sass: {                              
-            dist: {                            
-                options: {                       
+        sass: {
+            dist: {
+                options: {
                     style: 'expanded'
                 },
-                files: {                         
-                    'stylesheets/screen.css': 'sass/screen.scss',
-                    'stylesheets/ie.css': 'sass/ie.scss'
+                files: {
+                    '<%= meta.app %>/stylesheets/screen.css': '<%= meta.app %>/sass/screen.scss',
+                    '<%= meta.app %>/stylesheets/ie.css': '<%= meta.app %>/sass/ie.scss'
                 }
             }
         },
@@ -101,14 +102,14 @@ module.exports = function(grunt) {
             },
             files: [
                 'gruntfile.js',
-                'js/app/**'
+                '<%= meta.app %>/js/app/**'
             ]
         },
 
         concat: {
             js: {
-                src: ['js/vendor/**/*.js'],
-                dest: 'js/vendor/vendor.concat.js'
+                src: ['<%= meta.app %>/js/vendor/**/*.js'],
+                dest: '<%= meta.app %>/js/vendor/vendor.concat.js'
             }
         },
 
@@ -117,8 +118,8 @@ module.exports = function(grunt) {
                 preserveComments: false
             },
             my_target: {
-                src: ['js/vendor/vendor.concat.js'],
-                dest: 'js/vendor/vendor.min.js'
+                src: ['<%= meta.app %>/js/vendor/vendor.concat.js'],
+                dest: '<%= meta.app %>/js/vendor/vendor.min.js'
             }
         },
 
@@ -133,7 +134,7 @@ module.exports = function(grunt) {
 
         watch: {
             sassdev: {
-                files: ['sass/**'],
+                files: ['<%= meta.app %>/sass/**'],
                 tasks: ['compass', 'jshint'],
                 options: {
                     livereload: true,
@@ -144,7 +145,7 @@ module.exports = function(grunt) {
 
         // Empty out our common/src/temp directory to be prepared for the next time.
         clean: {
-            kill: ['common/js/libs/libs.concat.js']
+            kill: ['<%= meta.app %>/common/js/libs/libs.concat.js']
         },
         responsive_images: {
             myTask: {
@@ -152,7 +153,7 @@ module.exports = function(grunt) {
 
                 files: [{
                     expand: true,
-                    src: ['images/*.{jpg,gif,png}'],
+                    src: ['<%= meta.app %>/images/*.{jpg,gif,png}'],
                     dest: 'assets'
                 }]
             }
@@ -160,7 +161,7 @@ module.exports = function(grunt) {
 
 
     });
-    
+
     grunt.registerTask('images', ['responsive_images']);
 
     grunt.registerTask('sassdev', function () {
