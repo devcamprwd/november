@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic);
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 20px;
+	width: 90%;
+	margin: 0 auto;
+	font: 16px/1.4 'PT Serif', serif;
+	font-weight: 400;
+}
+
+#content {
+	-webkit-flow-into: content;
+}
+
+p {
+	margin: 0;
+}
+
+.regions:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+.region {
+	clear: both;
+	width: 40vw;
+	height: 40vw;
+	min-width: 10em;
+	min-height: 10em;
+	padding: 3vw;
+	margin: 2em 0;
+	border-radius: 5px;
+	-webkit-transition: all ease 1s;
+
+	-webkit-flow-from: content;
+}
+
+.region:nth-child(2n+1) {
+	float: left;
+	background: #FFE3B2;
+	-webkit-transform: perspective(700px) rotateY(30deg) translate3d(0, 0, 0);
+	-webkit-transform-origin: 0 0;
+}
+
+.region:nth-child(2n) {
+	float: right;
+	background: #FF9885;
+	-webkit-transform: perspective(700px) rotateY(-30deg) translate3d(0, 0, 0);
+	-webkit-transform-origin: 100% 0;
+}
+
+@media (min-width: 36em) {
+	.region:nth-child(2n+1) {
+		background: #FFBF7A;
+		-webkit-transform: perspective(700px) rotateY(10deg) translate3d(0, 0, 0);
+	}
+
+	.region:nth-child(2n) {
+		background: #FFBF7A;
+		-webkit-transform: perspective(700px) rotateY(-10deg) translate3d(0, 0, 0);
+	}
+}
+
+@-webkit-region .region {
+	p:nth-child(2n) {
+		color: #666;
+	}
+}
+
+.regions-nest .region {
+	-webkit-flow-into: nested;
+}
+
+.nest {
+	background: grey;
+	-webkit-flow-from: nested;
+}
+
+@-webkit-region .nest {
+	p {
+		color: green;
+	}
+}
