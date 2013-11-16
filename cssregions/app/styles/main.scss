@@ -1,7 +1,9 @@
 @import "compass";
 
+* { box-sizing: border-box; }
+
 html,body{
-	margin: 0;
+	margin: 0; font-family: helvetica, arial, sans-serif;
 }
 
 $fontBase : 16;
@@ -10,24 +12,47 @@ $fontBase : 16;
     @return ($target / $context) * 1rem;
 }
 
+.wrapper { width: 100%; overflow: hidden; background: #333; }
+img { max-width: 100%; height: auto; display: block; }
+
+h1 { margin: 1rem 3rem; font-size: 1.2rem; }
+
 article {
 	-webkit-flow-into: article;
-	h1{
-		
-	}
-	figure{
-		margin: 0;
-		-webkit-region-break-after:always;
-	}
-	img{
-		display: block;
-		max-width: 100%;
-	}
+	-webkit-region-break-after: always;
+	/*margin-bottom: 6rem;*/
+}
+article h2 { font-size: 2rem; margin-bottom: 2rem; color: #ccc; }
+article p { font-size: 1.2rem; margin-bottom: 1.2rem; line-height: 1.5; color: #adadad; }
+
+.item { 
+	/*width: 33.33333%;*/
+	/*float: left;*/
+	height: rem(500);
+	overflow: hidden;
+	width: 100%;
 }
 
-.region{
+.item--region {
 	-webkit-flow-from: article;
-	width: 33.33333%;
-	float: left;
-	height: rem(500);
+	padding: 3rem;
+}
+.item--img { filter: sepia(100%); transition: filter .5s; }
+.item--img:hover { filter: none; }
+
+
+.g--alert { position: absolute; top: 1rem; width: 4rem; height: 4rem; right: 4rem; background: tomato; border-radius: 50%; }
+
+.cta { width: 100%; overflow: hidden; padding: 4rem 0; text-align: center; background: #333; }
+.cta__btn { display: inline-block; margin: 0 auto; font-size: 2rem; font-weight: bold; background: #67872e; padding: 1rem 2rem; border-radius: 10px; color: #fff; text-decoration: none; }
+
+@media (min-width: 800px) {
+
+	.item { width: 50%; float: left; }
+	
+}
+@media (min-width: 1240px) {
+
+	.item { width: 33.333%; }
+	
 }
