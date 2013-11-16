@@ -1,0 +1,3 @@
+[submodule "temat9/flex-blog"]
+	path = temat9/flex-blog
+	url = https://github.com/mmiszy/flex-blog.git
