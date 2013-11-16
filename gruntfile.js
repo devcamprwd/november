@@ -11,6 +11,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-responsive-images');
     
     stylOptions = {
         'compress': false,
@@ -145,9 +146,22 @@ module.exports = function(grunt) {
         clean: {
             kill: ['common/js/libs/libs.concat.js']
         },
+        responsive_images: {
+            myTask: {
+                options: {},
+
+                files: [{
+                    expand: true,
+                    src: ['images/*.{jpg,gif,png}'],
+                    dest: 'assets'
+                }]
+            }
+        }
 
 
     });
+    
+    grunt.registerTask('images', ['responsive_images']);
 
     grunt.registerTask('sassdev', function () {
         console.log('This task will watch sass changes, run csslint and jslint');

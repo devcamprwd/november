@@ -27,6 +27,7 @@
     "grunt-contrib-watch": "*",
     "grunt-contrib-clean": "*",
     "underscore": "*",
+    "grunt-responsive-images": "*",
     "grunt-text-replace": "~0.3.6"
   }
 }
