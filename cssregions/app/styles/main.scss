@@ -1,0 +1,33 @@
+@import "compass";
+
+html,body{
+	margin: 0;
+}
+
+$fontBase : 16;
+
+@function rem($target, $context : $fontBase) {
+    @return ($target / $context) * 1rem;
+}
+
+article {
+	-webkit-flow-into: article;
+	h1{
+		
+	}
+	figure{
+		margin: 0;
+		-webkit-region-break-after:always;
+	}
+	img{
+		display: block;
+		max-width: 100%;
+	}
+}
+
+.region{
+	-webkit-flow-from: article;
+	width: 33.33333%;
+	float: left;
+	height: rem(500);
+}
