@@ -5,3 +5,12 @@
 
 @import "normalize";
 @import "susy";
+
+[data-picture="lazy"], [data-picture="shown"] {
+    @include transition(opacity 0.7s);
+    opacity: 0;
+}
+
+[data-picture="shown"] {
+    opacity: 1;
+}
