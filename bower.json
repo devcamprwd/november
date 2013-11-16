@@ -1,0 +1,11 @@
+{
+  "name": "Devcamp test project",
+  "version": "1.0.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "susy": "1.0.6"
+  }
+}
