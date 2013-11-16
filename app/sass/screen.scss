@@ -21,7 +21,12 @@ $total-column: 12;
 $column-width: 4em;
 $gutter-width: 1em;
 $grid-padding: $gutter-width;
+$font-color: #f2f2f4;
+$shadow: -1px -1px 1px white;
 
+body {
+	background-color: #444;
+}
 img {
     max-width: 100%;
 }
@@ -29,13 +34,35 @@ img {
 .page {
     @include container;
 }
-
+h1 {
+	color: $font-color;
+	font-size: 3em;
+	text-align: left;
+}
 nav {
-    @include span-columns(3,12);
+    @include span-columns(6,12);
+    ul {
+    	margin: 0;
+    	padding: 0;
+	    li {
+	    	display: inline-block;
+	    	a {
+	    		margin: 0 1.5rem 0 0;
+	    		color: $font-color;
+	    		text-transform: uppercase;
+	    		text-decoration: none;
+				font-weight: bold;
+	    	}
+			:hover {
+	    		text-decoration: underline;				
+			}
+	    }
+    }
 }
 
 p {
-    @include span-columns(8,12);
+    @include span-columns(4,12);
+	color: $font-color;
 }
 .image {
 	display: inline-block;
@@ -48,6 +75,6 @@ p {
 	img {
 		display: block;
 		height: auto;
-		
+		border: 5px solid rgba(0,0,0,0.5);
 	}
 }
