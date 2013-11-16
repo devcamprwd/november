@@ -132,8 +132,9 @@ module.exports = function(grunt) {
         watch: {
             sassdev: {
                 files: ['sass/**'],
-                tasks: ['compass', 'csslint', 'jshint'],
+                tasks: ['compass', 'jshint'],
                 options: {
+                    livereload: true,
                     interrupt: true
                 }
             }
