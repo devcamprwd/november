@@ -1,4 +1,0 @@
-makeuppoznan
-============
-
-makeuppoznan blog
