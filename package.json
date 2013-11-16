@@ -1,0 +1,31 @@
+{
+  "name": "Devcamp Tlokinia",
+  "title": "Devcamp Tlokinia",
+  "description": "Devcamp Tlokinia",
+  "version": "1.0.0",
+  "homepage": "localhost",
+  "commondirectory": "assets",
+  "author": {
+    "name": [
+      "Marcin Pajak"
+    ],
+    "email": [
+      "kontakt@marcin-pajak.pl"
+    ]
+  },
+  "devDependencies": {
+    "sass": "*",
+    "nib": "*",
+    "grunt": "~0.4.1",
+    "grunt-include-replace": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-csslint": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-clean": "*",
+    "underscore": "*",
+    "grunt-text-replace": "~0.3.6"
+  }
+}
