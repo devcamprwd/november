@@ -1,11 +1,12 @@
 {
-  "name": "Devcamp test project",
+  "name": "Devcamp-tlokinia",
   "version": "1.0.0",
   "ignore": [
     ".jshintrc",
     "**/*.txt"
   ],
   "dependencies": {
-    "susy": "1.0.6"
+    "susy": "1.0.6",
+    "normalize-css": "2.1.3"
   }
 }
