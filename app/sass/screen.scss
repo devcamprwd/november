@@ -22,6 +22,9 @@ $column-width: 4em;
 $gutter-width: 1em;
 $grid-padding: $gutter-width;
 
+img {
+    max-width: 100%;
+}
 
 .page {
     @include container;

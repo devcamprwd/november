@@ -7,6 +7,9 @@
   ],
   "dependencies": {
     "susy": "1.0.6",
-    "normalize-css": "~2.1.3"
+    "normalize-css": "~2.1.3",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.10.2",
+    "picturefill":"~1.2.0"
   }
 }
