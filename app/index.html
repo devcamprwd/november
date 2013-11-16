@@ -113,17 +113,12 @@
                 el.attr('data-picture', '');
                 picturefill();
 
-
                 el.find('img').load(function () {
                     var next = el.next('.image');
-                    console.log('image-loaded', el)
                     el.waypoint(function () {
-                        console.log('waypoint fired')
-                        bindPictureFill(next)
-                    }, { offset: 0 })
+                        bindPictureFill(next);
+                    }, { offset: 0 });
                 });
-
-
                 
             }
 
