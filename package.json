@@ -19,6 +19,7 @@
     "grunt": "~0.4.1",
     "grunt-include-replace": "*",
     "grunt-contrib-sass": "*",
+    "grunt-contrib-compass": "*",
     "grunt-contrib-csslint": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-concat": "*",

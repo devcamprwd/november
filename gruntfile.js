@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     // Load all of our NPM tasks...
     grunt.loadNpmTasks('grunt-include-replace');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -120,10 +121,18 @@ module.exports = function(grunt) {
             }
         },
 
+        compass: {
+            dist: {
+                options: {
+                    config: 'config.rb'
+                }
+            }
+        },
+
         watch: {
             sassdev: {
                 files: ['sass/**'],
-                tasks: ['sass', 'csslint', 'jshint'],
+                tasks: ['compass', 'csslint', 'jshint'],
                 options: {
                     interrupt: true
                 }
