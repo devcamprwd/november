@@ -31,8 +31,8 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {                         
-                    'assets/css/main.css': 'assets/sass/main.scss',
-                    'assets/css/ie.css': 'assets/sass/ie.scss'
+                    'stylesheets/screen.css': 'sass/screen.scss',
+                    'stylesheets/ie.css': 'sass/ie.scss'
                 }
             }
         },
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
                 "vendor-prefix": true,
                 "zero-units": "warning"
             },
-            src: ['common/css/main.css']
+            src: ['stylesheets/screen.css']
         },
 
         jshint: {
@@ -99,14 +99,14 @@ module.exports = function(grunt) {
             },
             files: [
                 'gruntfile.js',
-                'common/js/app/**'
+                'js/app/**'
             ]
         },
 
         concat: {
             js: {
-                src: ['assets/js/vendor/**/*.js'],
-                dest: 'assets/js/vendor/vendor.concat.js'
+                src: ['js/vendor/**/*.js'],
+                dest: 'js/vendor/vendor.concat.js'
             }
         },
 
@@ -115,14 +115,14 @@ module.exports = function(grunt) {
                 preserveComments: false
             },
             my_target: {
-                src: ['assets/js/vendor/vendor.concat.js'],
-                dest: 'assets/js/vendor/vendor.min.js'
+                src: ['js/vendor/vendor.concat.js'],
+                dest: 'js/vendor/vendor.min.js'
             }
         },
 
         watch: {
             sassdev: {
-                files: ['assets/styles/**'],
+                files: ['sass/**'],
                 tasks: ['sass', 'csslint', 'jshint'],
                 options: {
                     interrupt: true
