@@ -5,3 +5,21 @@
 
 @import "normalize";
 @import "susy";
+
+$total-column: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+
+
+.page {
+    @include container;
+}
+
+nav {
+    @include span-columns(3,12);
+}
+
+p {
+    @include span-columns(8,12);
+}
