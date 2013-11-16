@@ -21,8 +21,8 @@ $total-column: 12;
 $column-width: 4em;
 $gutter-width: 1em;
 $grid-padding: $gutter-width;
-$font-color: #f2f2f4;
-$shadow: -1px -1px 1px white;
+$font-color: #bdbdbd;
+$shadow: 1px 1px 0 black;
 
 body {
 	background-color: #444;
@@ -38,6 +38,7 @@ h1 {
 	color: $font-color;
 	font-size: 3em;
 	text-align: left;
+	text-shadow: $shadow;
 }
 nav {
     @include span-columns(6,12);
