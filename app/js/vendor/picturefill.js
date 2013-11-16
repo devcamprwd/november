@@ -1,9 +1,8 @@
-Modernizr.on('webp', function (result) {
+var PictureTest = function( w ) {
 
     'use strict';
 
-    var imageType = (result) ? '.webp' : '.jpg',
-        ps = document.getElementsByTagName('span'),
+    var ps = document.getElementsByTagName('span'),
         itemsLazy = [];
 
     for (var i = 0, il = ps.length; i < il; i++) {
@@ -11,8 +10,8 @@ Modernizr.on('webp', function (result) {
             itemsLazy.push(ps[i]);
         }
     }
-    
-    function elementInViewport(el) {
+
+    w.elementInViewport = function(el) {
         var rect = el.getBoundingClientRect();
 
         return (
@@ -20,9 +19,9 @@ Modernizr.on('webp', function (result) {
         );
     }
 
-    function processScroll() {
+    w.processScroll = function() {
         for (var i = 0; i < itemsLazy.length; i++) {
-            if (elementInViewport(itemsLazy[i])) {
+            if (w.elementInViewport(itemsLazy[i])) {
                 itemsLazy[i].setAttribute('data-picture', 'shown');
                 itemsLazy.splice(i, i);
                 if (itemsLazy.length === 1) {
@@ -33,17 +32,20 @@ Modernizr.on('webp', function (result) {
                         window.detachEvent('onscroll', processScroll)
                     }
                 }
-                picturefill();
+                w.picturefill();
             }
         }
     }
 
-    function picturefill() {
+    w.picturefill = function() {
+        console.log(Modernizr.webp);
+        var imageType = (Modernizr.webp) ? '.webp' : '.jpg';
+
         // Loop the pictures
         for (var i = 0, il = ps.length; i < il; i++) {
             if (ps[i].getAttribute('data-picture') === 'shown') {
 
-                var sources = ps[i].getElementsByTagName('div'),
+                var sources = ps[i].getElementsByTagName('span'),
                     matches = [];
 
                 // See if which sources match
@@ -57,7 +59,6 @@ Modernizr.on('webp', function (result) {
 
                 // Find any existing img element in the picture element
                 var picImg = ps[i].getElementsByTagName('img')[0];
-
                 if (matches.length) {
                     if (!picImg) {
                         picImg = document.createElement('img');
@@ -71,19 +72,28 @@ Modernizr.on('webp', function (result) {
         }
     }
 
-    if (window.addEventListener) {
-        window.addEventListener('resize', picturefill, false);
-        window.addEventListener('DOMContentLoaded', function () {
-            picturefill();
+    if (w.addEventListener) {
+        w.addEventListener('resize', w.picturefill, false);
+        w.addEventListener('DOMContentLoaded', function () {
+            w.picturefill();
             // Run once only
-            window.removeEventListener('load', picturefill, false);
+            w.removeEventListener('load', w.picturefill, false);
         }, false);
-        window.addEventListener('load', picturefill, false);
-        window.addEventListener('scroll', processScroll, false);
+        w.addEventListener('load', w.picturefill, false);
+        w.addEventListener('scroll', w.processScroll, false);
     }
-    else if (window.attachEvent) {
-        window.attachEvent('onload', picturefill);
-        window.attachEvent('onscroll', processScroll);
+    else if (w.attachEvent) {
+        w.attachEvent('onload', w.picturefill);
+        w.attachEvent('onscroll', w.processScroll);
     }
 
+    w.picturefill();
+};
+
+
+Modernizr.on('webp', function (result) {
+
+    'use strict';
+
+    new PictureTest( window );
 });
