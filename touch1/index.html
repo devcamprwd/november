@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Touch - JS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	.box{
+		width: 5em;
+		height: 5em;
+		position: absolute;
+	}
+	.box--tomato { background: tomato; top: 5em; }
+	.box--lime { background: lime; top: 10em; }
+	.box--plum { background: plum; top: 15em; }
+	</style>
+</head>
+<body>
+
+	<div class="box box--tomato"></div>
+	<div class="box box--lime"></div>
+	<div class="box box--plum"></div>
+	
+	<div class="js--log-start"></div>
+	<div class="js--log-move"></div>
+	
+	<script>
+		var box = document.querySelectorAll('.box');
+		var boxes = box.length;
+		var jslogstart = document.querySelector('.js--log-start');
+		var jslogmove = document.querySelector('.js--log-move');
+		var start, offset, delta;
+
+
+		for ( i = 0; i < boxes; i++ ) {
+			
+			box[i].addEventListener('touchstart', function(e){
+				e.preventDefault();
+
+				start = {
+					x : e.touches[0].clientX,
+					y : e.touches[0].clientY,
+				}
+
+				offset = {
+					x : parseInt(e.target.style.left) || parseInt(e.target.offsetLeft),
+					y : parseInt(e.target.style.top) || parseInt(e.target.offsetTop)
+				}
+
+				jslogstart.innerHTML = 'start.x: ' +  start.x + '  ' + 'start.y: ' + start.y + '<br />'
+								+ 'offset.x: ' +  offset.x + '  ' + 'offset.y: ' + offset.y;
+				
+			
+			})
+
+			box[i].addEventListener('touchmove', function(e){
+				e.preventDefault();
+
+				delta = {
+					x : e.touches[0].clientX - start.x,
+					y : e.touches[0].clientY - start.y
+				}
+
+				e.target.style.left = offset.x+delta.x+'px';
+				e.target.style.top = offset.y+delta.y+'px';
+
+				jslogmove.innerHTML = 'delta.x: ' +  delta.x + '  ' + 'delta.y: ' + delta.y;
+
+			})
+
+		}
+		
+		
+
+	</script>
+
+</body>
+</html>
