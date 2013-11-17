@@ -1,3 +1,6 @@
 [submodule "temat9/flex-blog"]
 	path = temat9/flex-blog
 	url = https://github.com/mmiszy/flex-blog.git
+[submodule "touch-events-drawing"]
+	path = touch-events-drawing
+	url = https://github.com/mmiszy/touch-events-drawing.git
