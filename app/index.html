@@ -12,7 +12,7 @@
 
     <body>
         <div class="page">
-            <h1>DevCamp - Tłokinia Kościelna 2013</h1>
+            <h1 id="title">DevCamp - Tłokinia Kościelna 2013</h1>
             <nav>
                 <ul>
                     <li><a href="https://www.facebook.com/devmeetingspl">devmeetings</a></li>
@@ -107,6 +107,7 @@
         <script src="/bower_components/modernizr/modernizr.js"></script>
         <script src="/bower_components/picturefill/picturefill.js"></script>
         <script src="/bower_components/jquery-waypoints/waypoints.js"></script>
+        <script src="/bower_components/hammerjs/dist/hammer.js"></script>
         <script src="http://localhost:35729/livereload.js"></script>
         <script>
             function bindPictureFill(el) {
@@ -123,6 +124,12 @@
             }
 
             bindPictureFill($('.image').first());
+    
+            var element = document.getElementById('title');
+            var hammertime = Hammer(element).on("tap", function(event) {
+                alert('hello!');
+            });
+
             
         </script>
     </body>

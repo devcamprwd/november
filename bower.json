@@ -11,6 +11,7 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
     "picturefill": "~1.2.0",
-    "jquery-waypoints": "~2.0.3"
+    "jquery-waypoints": "~2.0.3",
+    "hammerjs": "1.0.5"
   }
 }
