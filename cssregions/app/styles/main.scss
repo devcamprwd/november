@@ -19,19 +19,21 @@ h1 { margin: 1rem 3rem; font-size: 1.2rem; }
 
 article {
 	-webkit-flow-into: article;
-	-webkit-region-break-after: always;
-	/*margin-bottom: 6rem;*/
+	
+	// -webkit-region-break-after: always;
 }
+
+.article--last { margin-bottom: 6rem; }
+
 article h2 { font-size: 2rem; margin-bottom: 2rem; color: #ccc; }
 article p { font-size: 1.2rem; margin-bottom: 1.2rem; line-height: 1.5; color: #adadad; }
 
 .item { 
-	/*width: 33.33333%;*/
-	/*float: left;*/
 	height: rem(500);
 	overflow: hidden;
 	width: 100%;
 }
+.item--region-last { height: auto; }
 
 .item--region {
 	-webkit-flow-from: article;
@@ -41,17 +43,17 @@ article p { font-size: 1.2rem; margin-bottom: 1.2rem; line-height: 1.5; color: #
 .item--img:hover { filter: none; }
 
 
-.g--alert { position: absolute; top: 1rem; width: 4rem; height: 4rem; right: 4rem; background: tomato; border-radius: 50%; }
+.g--alert { position: fixed; top: 1rem; width: 4rem; height: 4rem; right: 4rem; background: tomato; border-radius: 50%; }
 
 .cta { width: 100%; overflow: hidden; padding: 4rem 0; text-align: center; background: #333; }
 .cta__btn { display: inline-block; margin: 0 auto; font-size: 2rem; font-weight: bold; background: #67872e; padding: 1rem 2rem; border-radius: 10px; color: #fff; text-decoration: none; }
 
 @media (min-width: 800px) {
-
+	
 	.item { width: 50%; float: left; }
 	
 }
-@media (min-width: 1240px) {
+@media (min-width: 1200px) {
 
 	.item { width: 33.333%; }
 	
